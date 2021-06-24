@@ -1,0 +1,15 @@
+https://www.notion.so/panicpotatoe/Sample-build-b3bfdde024244bdcb38b90469920f13e
+# redirect to project root folder
+docker build -t [app name here] .
+
+# if failed...
+## failed to solve with frontend dockerfile.v0: failed to create LLB definition: failed to authorize: rpc error: code = Unknown desc = failed to fetch oauth token: unexpected status: 401 Unauthorized
+# then disable build kit & login with personal account token
+# and rebuild
+
+export DOCKER_BUILDKIT=0
+export COMPOSE_DOCKER_CLI_BUILD=0
+docker login --username [username here]
+
+# run the app on image
+docker run [app name here]
